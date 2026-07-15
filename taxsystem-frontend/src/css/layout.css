@@ -1,0 +1,21 @@
+.layout{
+
+    display:flex;
+
+    height:calc(100vh - 70px);
+
+}
+
+.content{
+
+    flex:1;
+
+    background:#eef2f7;
+
+    padding:30px;
+
+    overflow-y:auto;
+
+    overflow-x:auto;
+
+}

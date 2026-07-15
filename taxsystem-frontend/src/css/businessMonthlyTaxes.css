@@ -1,0 +1,164 @@
+.business-monthly-container{
+
+    padding:30px;
+
+}
+
+.business-monthly-container h2{
+
+    color:#1f4e79;
+
+    margin-bottom:20px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+
+}
+
+th{
+
+    background:#1f4e79;
+
+    color:white;
+
+    padding:14px;
+
+    text-align:center;
+
+}
+
+td{
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+
+    text-align:center;
+
+    white-space:nowrap;
+
+}
+
+.status{
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+.status.unpaid{
+
+    background:#fff3cd;
+
+    color:#856404;
+
+}
+
+.status.paid{
+
+    background:#d4edda;
+
+    color:#155724;
+
+}
+
+.status.overdue{
+
+    background:#f8d7da;
+
+    color:#721c24;
+
+}
+
+.empty-box{
+
+    background:white;
+
+    padding:40px;
+
+    text-align:center;
+
+    border-radius:8px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+
+}
+
+@media(max-width:900px){
+
+    .business-monthly-container{
+
+        overflow-x:auto;
+
+    }
+
+    table{
+
+        min-width:900px;
+
+    }
+
+}
+
+.generate-btn{
+
+    background:#28a745;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 15px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+}
+
+.generate-btn:hover{
+
+    background:#218838;
+
+}
+
+
+.pay-btn{
+
+    margin-top:8px;
+
+    background:#198754;
+
+    color:white;
+
+    border:none;
+
+    padding:6px 12px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}
+
+.pay-btn:hover{
+
+    background:#157347;
+
+}

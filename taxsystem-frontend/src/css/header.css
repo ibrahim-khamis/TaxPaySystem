@@ -1,0 +1,34 @@
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:18px 30px;
+
+    height:70px;
+
+    box-sizing:border-box;
+
+}
+.header h2{
+
+    margin:0;
+
+    font-size:20px;
+
+}
+
+.header-user{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}

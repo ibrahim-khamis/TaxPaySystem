@@ -1,0 +1,19 @@
+.business-layout{
+
+    display:flex;
+
+    height:calc(100vh - 70px);
+
+}
+
+.business-content{
+
+    flex:1;
+
+    background:#eef2f7;
+
+    padding:30px;
+
+    overflow:auto;
+
+}

@@ -1,0 +1,36 @@
+.business-payments-container{
+    padding:20px;
+}
+
+.business-payments-container h2{
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+table th,
+table td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+table th{
+    background:#f2f2f2;
+}
+
+.success{
+    color:green;
+    font-weight:bold;
+}
+
+.empty-box{
+    padding:30px;
+    text-align:center;
+    background:#f5f5f5;
+    border:1px solid #ddd;
+}

@@ -1,0 +1,71 @@
+.my-business-container{
+
+    padding:30px;
+
+}
+
+.my-business-container h2{
+
+    color:#1f4e79;
+
+    margin-bottom:20px;
+
+}
+
+.business-card{
+
+    background:white;
+
+    border-radius:8px;
+
+    padding:25px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+
+    max-width:700px;
+
+}
+
+.business-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.business-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.business-row span{
+
+    font-weight:bold;
+
+    color:#555;
+
+}
+
+.business-row strong{
+
+    color:#222;
+
+}
+
+@media(max-width:768px){
+
+    .business-row{
+
+        flex-direction:column;
+
+        gap:6px;
+
+    }
+
+}
