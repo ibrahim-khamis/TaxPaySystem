@@ -47,7 +47,7 @@ function Sidebar() {
                 </li>
 
                 <li className={location.pathname === "/pending-businesses" ? "active" : ""}>
-                    <Link to="/pending-businesses">Pending Businesses</Link>
+                    <Link to="/pending-businesses">Pending Businesse</Link>
                 </li>
 
                 <li className={location.pathname === "/payments" ? "active" : ""}>
