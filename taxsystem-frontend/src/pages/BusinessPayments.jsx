@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BusinessLayout from "../components/BusinessLayout";
 import BASE_URL from "../services/api";
 import "../css/businessPayments.css";
+import "../css/table.css";
 
 function BusinessPayments() {
 
@@ -81,6 +82,7 @@ function BusinessPayments() {
 
                         (
 
+                        <div className="table-container">
                             <table>
 
                                 <thead>
@@ -146,6 +148,8 @@ function BusinessPayments() {
                                 </tbody>
 
                             </table>
+
+                        </div>
 
                         )
 

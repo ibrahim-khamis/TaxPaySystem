@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BusinessLayout from "../components/BusinessLayout";
 import BASE_URL from "../services/api";
 import "../css/businessMonthlyTaxes.css";
+import "../css/table.css";
 
 function BusinessMonthlyTaxes() {
 
@@ -198,6 +199,7 @@ const makePayment = async (controlNumber) => {
 
                         (
 
+                    <div className="table-container">
                             <table>
 
                                 <thead>
@@ -337,6 +339,8 @@ const makePayment = async (controlNumber) => {
                                 </tbody>
 
                             </table>
+
+                        </div>    
 
                         )
 
