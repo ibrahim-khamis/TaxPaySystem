@@ -9,12 +9,15 @@ import com.taxsystem.dto.BusinessDetailsDTO;
 import com.taxsystem.dto.BusinessRequestDTO;
 import com.taxsystem.model.Business;
 import com.taxsystem.model.BusinessType;
+import com.taxsystem.model.MonthlyTax;
 import com.taxsystem.model.Municipality;
 import com.taxsystem.model.User;
 import com.taxsystem.repository.BusinessRepository;
 import com.taxsystem.repository.BusinessTypeRepository;
+import com.taxsystem.repository.MonthlyTaxRepository;
 import com.taxsystem.repository.MunicipalityRepository;
 import com.taxsystem.repository.UserRepository;
+
 
 @Service
 public class BusinessService {
@@ -23,17 +26,21 @@ public class BusinessService {
     private final UserRepository userRepository;
     private final MunicipalityRepository municipalityRepository;
     private final BusinessTypeRepository businessTypeRepository;
+    private final MonthlyTaxRepository monthlyTaxRepository;
+    
 
     public BusinessService(
             BusinessRepository businessRepository,
             UserRepository userRepository,
             MunicipalityRepository municipalityRepository,
-            BusinessTypeRepository businessTypeRepository) {
+            BusinessTypeRepository businessTypeRepository,
+        MonthlyTaxRepository monthlyTaxRepository) {
 
         this.businessRepository = businessRepository;
         this.userRepository = userRepository;
         this.municipalityRepository = municipalityRepository;
         this.businessTypeRepository = businessTypeRepository;
+        this.monthlyTaxRepository = monthlyTaxRepository;
     }
 
     // ===========================
@@ -261,16 +268,19 @@ public class BusinessService {
          * Baadaye tutabadilisha iwe status ya Monthly Tax.
          */
 
-        dashboard.setPaymentStatus(
-                business.getStatus());
+        MonthlyTax latestTax = monthlyTaxRepository
+                .findTopByBusinessOrderByBillingYearDescBillingMonthDesc(business)
+                .orElse(null);
 
-        /*
-         * Kwa sasa Total Paid = 0.
-         * Tutaiunganisha na PaymentRepository baadaye.
-         */
+        if (latestTax == null) {
 
-        dashboard.setTotalPaid(0.0);
+            dashboard.setPaymentStatus("UNPAID");
 
+    }      else {
+
+            dashboard.setPaymentStatus(latestTax.getStatus());
+
+    }
         return dashboard;
 
     }

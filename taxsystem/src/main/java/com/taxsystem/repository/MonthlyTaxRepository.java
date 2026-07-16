@@ -25,6 +25,9 @@ public interface MonthlyTaxRepository extends JpaRepository<MonthlyTax, Long> {
 
     long countByStatus(String status);
 
+    Optional<MonthlyTax> findTopByBusinessOrderByBillingYearDescBillingMonthDesc(
+        Business business);
+
     
 
 }

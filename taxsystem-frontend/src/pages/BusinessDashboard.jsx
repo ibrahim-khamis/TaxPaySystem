@@ -100,14 +100,6 @@ function BusinessDashboard() {
 
                 />
 
-                <DashboardCard
-
-                    title="Total Paid"
-
-                    value={`TZS ${dashboard.totalPaid.toLocaleString()}`}
-
-                />
-
             </div>
 
         </BusinessLayout>

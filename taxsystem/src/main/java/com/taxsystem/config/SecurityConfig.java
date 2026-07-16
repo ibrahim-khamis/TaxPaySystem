@@ -82,7 +82,7 @@ public class SecurityConfig {
                         // Business Types
 
                         .requestMatchers(HttpMethod.POST,
-                                "/api/v1/business-types/**").hasRole("ADMIN")
+                                "/api/v1/business-types/**").authenticated()
 
                         .requestMatchers(HttpMethod.PUT,
                                 "/api/v1/business-types/**").hasRole("ADMIN")
@@ -94,7 +94,9 @@ public class SecurityConfig {
                         // AUTHENTICATED USERS
                         // ===========================
 
-                        .requestMatchers("/api/v1/businesses/**").authenticated()
+                        // .requestMatchers("/api/v1/businesses/**").authenticated()
+
+                        .requestMatchers("/api/v1/users/**").authenticated()
 
                         .requestMatchers("/api/v1/monthly-taxes/**").authenticated()
 
