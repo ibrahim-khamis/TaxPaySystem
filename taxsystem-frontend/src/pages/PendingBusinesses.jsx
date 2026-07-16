@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BASE_URL from "../services/api";
 import "../css/pendingBusinesses.css";
+import "../css/table.css";
 
 function PendingBusinesses() {
 
@@ -129,7 +130,8 @@ function PendingBusinesses() {
                         :
 
                         (
-
+                    
+                    <div className="table-container">
                             <table>
 
                                 <thead>
@@ -234,6 +236,8 @@ function PendingBusinesses() {
                                 </tbody>
 
                             </table>
+
+                        </div>
 
                         )
 

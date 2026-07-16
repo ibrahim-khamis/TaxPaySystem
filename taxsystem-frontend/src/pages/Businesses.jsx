@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BASE_URL from "../services/api";
 import "../css/businesses.css";
+import "../css/table.css";
 
 function Businesses() {
 
@@ -218,7 +219,7 @@ function Businesses() {
                     onChange={(e) => setSearch(e.target.value)}
 
                 />
-
+            <div className="table-container">
                 <table>
 
                     <thead>
@@ -336,6 +337,8 @@ function Businesses() {
                     </tbody>
 
                 </table>
+
+            </div>    
 
             </div>
 

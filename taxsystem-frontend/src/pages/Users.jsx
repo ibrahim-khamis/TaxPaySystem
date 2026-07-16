@@ -1,8 +1,8 @@
 import Layout from "../components/Layout";
 import UserForm from "../components/UserForm";
 import UserTable from "../components/UserTable";
+import "../css/table.css";
 
-import "../css/users.css";
 
 function Users(){
 

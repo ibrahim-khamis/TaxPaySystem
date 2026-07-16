@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BASE_URL from "../services/api";
 import "../css/monthlyTaxes.css";
+import "../css/table.css";
 
 function MonthlyTaxes() {
 
@@ -250,7 +251,7 @@ function MonthlyTaxes() {
                     </button>
 
                 </div>
-
+            <div className="table-container">
                 <table>
 
                     <thead>
@@ -405,6 +406,7 @@ function MonthlyTaxes() {
                     </tbody>
 
                 </table>
+            </div>
 
             </div>
 

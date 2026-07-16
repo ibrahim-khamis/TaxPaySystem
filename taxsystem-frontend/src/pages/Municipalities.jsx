@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BASE_URL from "../services/api";
 import "../css/municipalities.css";
+import "../css/table.css";
+
 
 function Municipalities() {
 
@@ -278,7 +280,7 @@ function Municipalities() {
                         :
 
                         (
-
+                    <div className="table-container">
                             <table>
 
                                 <thead>
@@ -360,6 +362,8 @@ function Municipalities() {
                                 </tbody>
 
                             </table>
+
+                        </div>
 
                         )
 

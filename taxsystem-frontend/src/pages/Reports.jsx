@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BASE_URL from "../services/api";
 import "../css/reports.css";
+import "../css/table.css";
 
 function Reports() {
 
@@ -116,7 +117,7 @@ function Reports() {
                     Payment Report
 
                 </h3>
-
+            <div className="table-container">
                 <table>
 
                     <thead>
@@ -174,6 +175,8 @@ function Reports() {
                     </tbody>
 
                 </table>
+
+            </div>
 
             </div>
 

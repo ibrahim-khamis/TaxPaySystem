@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BASE_URL from "../services/api";
 import "../css/businessTypes.css";
+import "../css/table.css";
 
 function BusinessTypes() {
 
@@ -306,7 +307,7 @@ function BusinessTypes() {
                         :
 
                         (
-
+                    <div className="table-container">
                             <table>
 
                                 <thead>
@@ -396,6 +397,7 @@ function BusinessTypes() {
                                 </tbody>
 
                             </table>
+                        </div>
 
                         )
 
