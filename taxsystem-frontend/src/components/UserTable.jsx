@@ -12,6 +12,10 @@ function UserTable() {
 
     }, []);
 
+    // ==========================
+    // LOAD USERS
+    // ==========================
+
     const fetchUsers = async () => {
 
         try {
@@ -25,7 +29,7 @@ function UserTable() {
                 headers: {
 
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
+                    Authorization: `Bearer ${token}`
 
                 }
 
@@ -44,6 +48,64 @@ function UserTable() {
         } catch (error) {
 
             console.error(error);
+
+        }
+
+    };
+
+    // ==========================
+    // DELETE USER
+    // ==========================
+
+    const handleDelete = async (id) => {
+
+        const confirmDelete = window.confirm(
+            "Are you sure you want to delete this user?"
+        );
+
+        if (!confirmDelete) return;
+
+        try {
+
+            const token = localStorage.getItem("token");
+
+            const response = await fetch(
+
+                `${BASE_URL}/users/${id}`,
+
+                {
+
+                    method: "DELETE",
+
+                    headers: {
+
+                        Authorization: `Bearer ${token}`
+
+                    }
+
+                }
+
+            );
+
+            if (response.ok) {
+
+                alert("User deleted successfully.");
+
+                fetchUsers();
+
+            } else {
+
+                const message = await response.text();
+
+                alert(message);
+
+            }
+
+        } catch (error) {
+
+            console.log(error);
+
+            alert("Failed to delete user.");
 
         }
 
@@ -74,55 +136,70 @@ function UserTable() {
 
                 <tbody>
 
-                    {users.length > 0 ? (
+                    {
 
-                        users.map((user) => (
+                        users.length > 0 ?
 
-                            <tr key={user.id}>
+                        (
 
-                                <td>{user.id}</td>
+                            users.map((user) => (
 
-                                <td>{user.firstName}</td>
+                                <tr key={user.id}>
 
-                                <td>{user.lastName}</td>
+                                    <td>{user.id}</td>
 
-                                <td>{user.email}</td>
+                                    <td>{user.firstName}</td>
 
-                                <td>{user.role}</td>
+                                    <td>{user.lastName}</td>
 
-                                <td>
+                                    <td>{user.email}</td>
 
-                                    <button className="edit-btn">
+                                    <td>{user.role}</td>
 
-                                        Edit
+                                    <td>
 
-                                    </button>
+                                        <button
+                                            className="edit-btn"
+                                        >
 
-                                    <button className="delete-btn">
+                                            Edit
 
-                                        Delete
+                                        </button>
 
-                                    </button>
+                                        <button
+                                            className="delete-btn"
+                                            onClick={() => handleDelete(user.id)}
+                                        >
+
+                                            Delete
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            ))
+
+                        )
+
+                        :
+
+                        (
+
+                            <tr>
+
+                                <td colSpan="6">
+
+                                    No users found
 
                                 </td>
 
                             </tr>
 
-                        ))
+                        )
 
-                    ) : (
-
-                        <tr>
-
-                            <td colSpan="6">
-
-                                No users found
-
-                            </td>
-
-                        </tr>
-
-                    )}
+                    }
 
                 </tbody>
 
